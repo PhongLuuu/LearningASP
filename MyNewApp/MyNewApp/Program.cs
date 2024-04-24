@@ -16,6 +16,10 @@ public class Program
             Console.WriteLine($"[{context.Request.Method} {context.Request.Path} {DateTime.UtcNow}] Started.");
             await next(context);
             Console.WriteLine($"[{context.Request.Method} {context.Request.Path} {DateTime.UtcNow}] Finished.");
+
+            //await context.Response.WriteAsync("<div> before - CustomeMiddleware </div>");
+            //await _next(context);
+            //await context.Response.WriteAsync("<div> after - CustomeMiddleware </div>");
         });
 
         var todos = new List<Todo>();
